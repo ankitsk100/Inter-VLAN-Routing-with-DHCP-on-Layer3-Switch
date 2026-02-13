@@ -1,0 +1,18 @@
+enable
+configure terminal
+
+vlan 10
+ name IT
+exit
+
+interface range fa0/2-24
+ switchport mode access
+ switchport access vlan 10
+exit
+
+interface fa0/1
+ switchport mode trunk
+exit
+
+end
+write memory
